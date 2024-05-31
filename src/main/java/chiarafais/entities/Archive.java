@@ -36,5 +36,11 @@ public class Archive {
         Catalog elementoDaCercare = catalogoList.stream().filter(elemento -> elemento.getIsbn() == codiceId).toList().getFirst();
         System.out.println("Hai trovato l'elemento" + elementoDaCercare);
     }
+    //es 4
+    public static void ricercaPerAnno(List<Catalog> catalogoList, int annoPubblicazione) {
+        Catalog elementoDaCercare = catalogoList.stream().filter(elemento -> elemento.getAnnoPubblicazione() == annoPubblicazione).toList().getFirst();
+        System.out.println("Hai trovato l'elemento" + elementoDaCercare);
+    }
+    
 
 }

@@ -97,6 +97,14 @@ public class Application {
 
             Archive.ricercaPerId(catalogo, ISBN);
         }
+        //esercizio 4
+        case "4" :{
+            System.out.println("inserisci un codice anno di pubblicazione per cercare un elemento");
+            int annoPubblicazione;
+            annoPubblicazione = Integer.parseInt(scanner.nextLine());
+
+            Archive.ricercaPerAnno(catalogo, annoPubblicazione);
+        }
 
     }
 
