@@ -46,7 +46,7 @@ public class Archive {
             Books elementoDaCercare = (Books) catalogoList.stream().filter(elemento -> elemento instanceof Books).filter(elemento -> Objects.equals(((Books) elemento).getAutore(), autore)).toList().getFirst();
             System.out.println("Hai trovato l'elemento" + elementoDaCercare);
     }
-    //esercizio 6-7
+    //esercizio 6-7 MOLTO PROBABILMENTE SBAGLIATO!!!!!!!!!!!!!
     public static void addFile(List<Catalog> catalogoList) {
             File file = new File("src/listaCatalogo.txt");
 
