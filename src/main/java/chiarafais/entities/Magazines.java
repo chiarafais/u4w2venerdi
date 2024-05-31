@@ -1,6 +1,7 @@
 package chiarafais.entities;
 
 import chiarafais.enums.Periodicity;
+import com.github.javafaker.DateAndTime;
 
 public class Magazines extends Catalog {
 
@@ -9,6 +10,10 @@ public class Magazines extends Catalog {
     public Magazines(long ISBN, String titolo, int annoPubblicazione, long numeroPagine, Periodicity periodicity) {
         super(ISBN, titolo, annoPubblicazione, numeroPagine);
         this.periodicity= periodicity;
+    }
+
+    public void setPeriodicity(Periodicity periodicity) {
+        this.periodicity = periodicity;
     }
 
     public Periodicity getTipoRivista() {

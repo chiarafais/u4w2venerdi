@@ -1,5 +1,7 @@
 package chiarafais.entities;
 
+import com.github.javafaker.DateAndTime;
+
 public class Books extends Catalog {
 
     private String autore;
@@ -11,6 +13,14 @@ public class Books extends Catalog {
 
     public String getGenere() {
         return genere;
+    }
+
+    public void setAutore(String autore) {
+        this.autore = autore;
+    }
+
+    public void setGenere(String genere) {
+        this.genere = genere;
     }
 
     public Books (long ISBN, String titolo, int annoPubblicazione, long numeroPagine, String autore, String genere) {
