@@ -1,5 +1,6 @@
 package chiarafais;
 
+import chiarafais.entities.Archive;
 import chiarafais.entities.Books;
 import chiarafais.entities.Catalog;
 import chiarafais.entities.Magazines;
@@ -80,10 +81,27 @@ public class Application {
 
         }
     }
+    //esercizio 2
+        case "2" :{
+            System.out.println("inserisci un codice ISBM corretto per rimuovere un elemento");
+            int ISBN;
+            ISBN = Integer.parseInt(scanner.nextLine());
+            Archive.remove(catalogo, ISBN);
+            System.out.println("ecco la lista aggiornata : " + catalogo);
+        }
+        //esercizio 3
+        case "3" :{
+            System.out.println("inserisci un codice ISBM corretto per cercare un elemento");
+            int ISBN;
+            ISBN = Integer.parseInt(scanner.nextLine());
 
-    } //fine es 1
+            Archive.ricercaPerId(catalogo, ISBN);
+        }
 
-        //esercizio 2
+    }
+
+
+
 
 
 
