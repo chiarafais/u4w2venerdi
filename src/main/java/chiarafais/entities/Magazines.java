@@ -1,7 +1,6 @@
 package chiarafais.entities;
 
 import chiarafais.enums.Periodicity;
-import com.github.javafaker.DateAndTime;
 
 public class Magazines extends Catalog {
 

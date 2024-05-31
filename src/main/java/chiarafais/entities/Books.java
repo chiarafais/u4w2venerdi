@@ -1,7 +1,5 @@
 package chiarafais.entities;
 
-import com.github.javafaker.DateAndTime;
-
 public class Books extends Catalog {
 
     private String autore;

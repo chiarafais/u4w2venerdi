@@ -2,22 +2,17 @@ package chiarafais.entities;
 
 import chiarafais.enums.Periodicity;
 import org.apache.commons.io.FileUtils;
-
-import java.awt.print.Book;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Objects;
 
-import static chiarafais.entities.Catalog.generateCatalog;
 
 public class Archive {
 
 
-    //esecrizio 1
+    //esercizio 1
     public static Books createUserBook(long ISBN , String titolo, int annoPubblicazione, long numeroPagine, String autore, String genere){
         Books libro = new Books(ISBN, titolo,annoPubblicazione,numeroPagine,autore , genere);
 
@@ -36,26 +31,22 @@ public class Archive {
         catalogoList.remove(elementoDaRimuovere);
         System.out.println("Hai rimosso l'elemento" + elementoDaRimuovere + "con successo");
     }
-    //es 3
+    //esercizio 3
     public static void ricercaPerId(List<Catalog> catalogoList, int codiceId) {
         Catalog elementoDaCercare = catalogoList.stream().filter(elemento -> elemento.getIsbn() == codiceId).toList().getFirst();
         System.out.println("Hai trovato l'elemento" + elementoDaCercare);
     }
-    //es 4
+    //esercizio 4
     public static void ricercaPerAnno(List<Catalog> catalogoList, int annoPubblicazione) {
         Catalog elementoDaCercare = (Catalog) catalogoList.stream().filter(elemento -> elemento.getAnnoPubblicazione() == annoPubblicazione).toList().getFirst();
         System.out.println("Hai trovato l'elemento" + elementoDaCercare);
     }
-    //es 5
+    //esercizio 5
     public static void ricercaAutore(List<Catalog> catalogoList, String autore) {
-        try {
             Books elementoDaCercare = (Books) catalogoList.stream().filter(elemento -> elemento instanceof Books).filter(elemento -> Objects.equals(((Books) elemento).getAutore(), autore)).toList().getFirst();
-            System.out.println("Hai trovato l'emento" + elementoDaCercare);
-        } catch (NoSuchElementException e) {
-            System.out.println("Non esiste questo elemento");
-        }
+            System.out.println("Hai trovato l'elemento" + elementoDaCercare);
     }
-    //es 6-7
+    //esercizio 6-7
     public static void addFile(List<Catalog> catalogoList) {
             File file = new File("src/listaCatalogo.txt");
 
