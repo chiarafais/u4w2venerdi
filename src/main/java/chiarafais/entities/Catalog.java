@@ -1,7 +1,7 @@
 package chiarafais.entities;
 
 import chiarafais.enums.Periodicity;
-import com.github.javafaker.DateAndTime;
+
 import com.github.javafaker.Faker;
 
 import java.util.ArrayList;
@@ -78,31 +78,23 @@ public abstract class Catalog {
         return defaultPeriodicity;
     }
 
-
-    public static List<Books> generateBooks() {
-        List<Books> libri = new ArrayList<Books>();
+    public static List<Catalog> generateCatalog(){
+        List<Catalog> catalogo = new ArrayList<>();
         Faker faker = new Faker(Locale.ITALY);
 
         Supplier<Books> randomBooks = () -> new Books(faker.number().numberBetween(111111111,999999999), faker.book().title(), faker.number().numberBetween(1950,2024), faker.number().numberBetween(50,2000), faker.book().author(), faker.book().genre());
+        Supplier<Magazines> randomMagazine = () -> new Magazines(faker.number().numberBetween(111111111,999999999), faker.book().title(), faker.number().numberBetween(1950,2024), faker.number().numberBetween(50,2000),randomPeriodicity());
+
         for (int i = 0; i < 20; i++) {
             Books generateBooks = randomBooks.get();
-            libri.add(generateBooks);
-
-        }
-        return libri;
-    }
-
-    public static List<Magazines> generateMagazines() {
-        List<Magazines> riviste = new ArrayList<Magazines>();
-        Faker faker = new Faker(Locale.ITALY);
-
-        Supplier<Magazines> randomMagazine = () -> new Magazines(faker.number().numberBetween(111111111,999999999), faker.book().title(), faker.number().numberBetween(1950,2024), faker.number().numberBetween(50,2000),randomPeriodicity());
-        for (int i = 0; i < 20; i++) {
+            catalogo.add(generateBooks);
             Magazines generateMagazines = randomMagazine.get();
-            riviste.add(generateMagazines);
-
+            catalogo.add(generateMagazines);
         }
-        return riviste;
+        return catalogo;
     }
+
+
+
 
 }
