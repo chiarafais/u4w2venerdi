@@ -32,8 +32,6 @@ public class Application {
         System.out.println("4. Ricerca per anno di pubblicazione");
         System.out.println("5. Ricerca per autore");
         System.out.println("6. Salva su disco l'archivio");
-        System.out.println("7. Carica dall'archivio su disco");
-        System.out.println("8. Esci");
 
         String scelta = scanner.nextLine();
 
@@ -105,6 +103,19 @@ public class Application {
 
             Archive.ricercaPerAnno(catalogo, annoPubblicazione);
         }
+        //esercizio 5
+        case "5" :{
+            System.out.println("inserisci un Autore per cercare un elemento");
+            String autore;
+            autore = scanner.nextLine();
+
+            Archive.ricercaAutore(catalogo, autore);
+        }
+        //esercizio 6 
+        case "6" :{
+            Archive.addFile(catalogo);
+        }
+
 
     }
 
